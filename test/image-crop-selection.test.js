@@ -27,7 +27,7 @@ describe('Image crop selection validator', function () {
     var validate = createValidator([ 'Rectangle', 'Main' ])
     validate('images', 'Images', { images: {} }, function (err, errMessage) {
       if (err) return done(err)
-      assert.equal(errMessage, 'Image crops have not been downloaded')
+      assert.equal(errMessage, 'Images are required')
       done()
     })
   })
@@ -36,7 +36,7 @@ describe('Image crop selection validator', function () {
     var validate = createValidator([ 'Rectangle', 'Main' ])
     validate('images', 'Images', {}, function (err, errMessage) {
       if (err) return done(err)
-      assert.equal(errMessage, 'Image crops have not been downloaded')
+      assert.equal(errMessage, 'Images are required')
       done()
     })
   })

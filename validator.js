@@ -7,7 +7,8 @@ function createValidator (requiredCrops) {
 
   function validate (key, msg, object, callback) {
     var cropsValid
-    
+    var errorMessage = 'Image crops have not been downloaded'
+
     if (hasImages(object, key)) {
       cropsValid = true
       object[key].widgets.forEach(function (image) {
@@ -29,8 +30,10 @@ function createValidator (requiredCrops) {
           return cropsValid
         }
       })
+    } else {
+      errorMessage = 'Images are required'
     }
-    return callback(null, cropsValid ? undefined : 'Image crops have not been downloaded')
+    return callback(null, cropsValid ? undefined : errorMessage)
   }
 }
 
