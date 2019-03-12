@@ -1,6 +1,6 @@
 {
   "name": "validity-cf-crop-integrity-validator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Validity style validator to ensure that required image crops are selected with an image widget array",
   "main": "validator.js",
   "directories": {
